@@ -1,15 +1,12 @@
 <template>
   <div class="home flex flex-wrap">
-    <div id="book-item"
+    <div
+      id="book-item"
       class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mb-10 px-3"
       v-for="(book, index) in books"
       :key="index"
     >
-      <item
-        class="mx-auto"
-        :book="book"
-        @click="addBookToCart"
-      />
+      <item class="mx-auto" :book="book" @click="addBookToCart" />
     </div>
   </div>
 </template>

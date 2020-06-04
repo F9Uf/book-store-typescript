@@ -12,21 +12,27 @@
         </thead>
         <tbody>
           <tr v-for="(item, index) in GroupBookInCart" :key="index">
-            <td class="text-gray-800 border px-4 py-2">{{ item.book.title }}</td>
+            <td class="text-gray-800 border px-4 py-2">
+              {{ item.book.title }}
+            </td>
             <td class="text-gray-800 border px-4 py-2">{{ item.number }}</td>
-            <td class="text-gray-800 border px-4 py-2">{{ item.book.price }}</td>
+            <td class="text-gray-800 border px-4 py-2">
+              {{ item.book.price }}
+            </td>
           </tr>
           <tr>
-             <td colspan="3" class="text-gray-800 border px-4 py-2"> </td>
+            <td colspan="3" class="text-gray-800 border px-4 py-2"></td>
           </tr>
           <tr>
             <td colspan="2" class="text-gray-800 border px-4 py-2">Summary</td>
-            <td colspan="1" class="text-gray-800 border px-4 py-2">{{ TotalPrice }}฿</td>
+            <td colspan="1" class="text-gray-800 border px-4 py-2">
+              {{ TotalPrice }}฿
+            </td>
           </tr>
         </tbody>
       </table>
-      
     </div>
+    <button>Clear</button>
   </div>
 </template>
 
@@ -62,9 +68,7 @@ export default class CheckOutPage extends Vue {
 
   get TotalPrice() {
     // TODO: calculate following promotion
-    return this.cart
-      .map(e => e.book.price)
-      .reduce((acc, cur) => acc + cur, 0)
+    return this.cart.map(e => e.book.price).reduce((acc, cur) => acc + cur, 0);
   }
 }
 </script>

@@ -7,7 +7,10 @@
     />
     <div class="px-6 py-2">
       <div class="font-bold text-md mb-2">{{ book.title }}</div>
-      <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">{{ book.price }}฿</span>
+      <span
+        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2"
+        >{{ book.price }}฿</span
+      >
     </div>
     <div class="px-6 pt-2 pb-4">
       <button

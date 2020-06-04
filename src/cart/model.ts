@@ -1,6 +1,6 @@
-import { BookModel } from '@/books/model';
+import { BookModel } from "@/books/model";
 
 export interface CartModel {
-    cartId: number;
-    book: BookModel;
+  cartId: number;
+  book: BookModel;
 }
