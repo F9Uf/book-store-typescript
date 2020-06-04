@@ -7,7 +7,7 @@
         </div>
         <div id="menu" class="ml-auto flex flex-row">
           <router-link class="mx-6" to="/">Home</router-link>
-          <router-link class="mx-6" to="/about">Check Out</router-link>
+          <router-link class="mx-6" to="/checkout">Check Out</router-link>
         </div>
       </div>
     </div>
