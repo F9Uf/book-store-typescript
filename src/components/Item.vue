@@ -3,7 +3,7 @@
     <img
       class="w-full"
       :src="img"
-      alt="Sunset in the mountains"
+      alt="img"
     />
     <div class="px-6 py-2">
       <div class="font-bold text-md mb-2">{{ title }}</div>

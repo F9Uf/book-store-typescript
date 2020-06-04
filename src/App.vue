@@ -9,21 +9,30 @@
           <h1>Book Store</h1>
         </div>
         <div id="menu" class="ml-auto flex flex-row">
-          <router-link class="mx-6" to="/">Home</router-link>
-          <router-link class="mx-6" to="/checkout">Check Out</router-link>
+          <router-link exact-active-class="text-red-600" class="mx-6" to="/">Home</router-link>
+          <router-link exact-active-class="text-red-600" class="mx-6" to="/checkout">
+            Check Out ({{ numberOfBookInCart }} {{ numberOfBookInCart > 1 ? 'items' : 'item' }})
+            </router-link>
         </div>
       </div>
     </div>
     <div id="content" class="pt-20 w-full px-6">
-      <router-view />
+      <router-view :books="books" :cart="cart" />
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
+import data from "./books/db";
 
 @Component
 export default class HelloWorld extends Vue {
+  books = data.books;
+  cart = [];
+  
+  get numberOfBookInCart() {
+    return this.cart.length;
+  }
 }
 </script>
