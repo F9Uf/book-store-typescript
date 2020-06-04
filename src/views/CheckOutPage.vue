@@ -70,7 +70,7 @@ export default class CheckOutPage extends Vue {
       }
     }
 
-    return groupBook;
+    return groupBook.sort((a, b) => a.book.id - b.book.id);
   }
 
   get TotalPrice() {
