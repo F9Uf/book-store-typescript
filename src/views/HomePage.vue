@@ -7,9 +7,8 @@
     >
       <item
         class="mx-auto"
-        :title="book.title"
-        :price="book.price"
-        :img="require('@/assets/img/books/' + book.img)"
+        :book="book"
+        @click="addBookToCart"
       />
     </div>
   </div>
@@ -18,6 +17,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { BookModel } from "@/books/model";
+import { CartModel } from "@/cart/model";
 import Item from "@/components/Item.vue";
 
 @Component({
@@ -26,6 +26,14 @@ import Item from "@/components/Item.vue";
   }
 })
 export default class HomePage extends Vue {
-  @Prop() private books!: BookModel[];
+  @Prop() public books!: BookModel[];
+  @Prop() public cart!: CartModel[];
+
+  addBookToCart(seletedBook: BookModel) {
+    this.cart.push({
+      cartId: this.cart.length,
+      book: seletedBook
+    } as CartModel);
+  }
 }
 </script>
