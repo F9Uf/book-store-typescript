@@ -32,7 +32,14 @@
         </tbody>
       </table>
     </div>
-    <button>Clear</button>
+    <div class="flex w-full flex-row-reverse">
+      <button
+        class="w-1/6 bg-transparent hover:bg-red-400 text-red-400 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent rounded"
+        @click="clearCart()"
+      >
+        Clear
+      </button>
+    </div>
   </div>
 </template>
 
@@ -69,6 +76,10 @@ export default class CheckOutPage extends Vue {
   get TotalPrice() {
     // TODO: calculate following promotion
     return this.cart.map(e => e.book.price).reduce((acc, cur) => acc + cur, 0);
+  }
+
+  clearCart() {
+    // TODO: clear all item in cart
   }
 }
 </script>
