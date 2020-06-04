@@ -13,8 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/checkout",
     name: "CheckOut",
-    component: () =>
-      import("../views/CheckOutPage.vue")
+    component: () => import("../views/CheckOutPage.vue")
   }
 ];
 

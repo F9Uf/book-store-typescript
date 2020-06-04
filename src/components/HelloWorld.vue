@@ -1,6 +1,5 @@
 <template>
-  <div class="container mx-auto py-10">
-  </div>
+  <div class="container mx-auto py-10"></div>
 </template>
 
 <script lang="ts">

@@ -1,18 +1,17 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <item title="Cookie run 11" price="100" :img="require('@/assets/img/books/cookie5.jpg')" />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Item from "@/components/Item.vue";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    Item
   }
 };
 </script>
