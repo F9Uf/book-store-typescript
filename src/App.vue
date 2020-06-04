@@ -1,32 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div id="header" class="flex bg-white border-b border-gray-200 h-16 items-center">
+      <div id="nav" class="mx-auto px-6 reactive flex items-center w-full">
+        <div id="title" class="mr-auto">
+          <h1>Book Store</h1>
+        </div>
+        <div id="menu" class="ml-auto flex flex-row">
+          <router-link class="mx-6" to="/">Home</router-link>
+          <router-link class="mx-6" to="/about">Check Out</router-link>
+        </div>
+      </div>
     </div>
     <router-view />
   </div>
 </template>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
