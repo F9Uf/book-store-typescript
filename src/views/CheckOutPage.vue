@@ -26,7 +26,11 @@
           </tr>
           <tr>
             <td colspan="2" class="text-gray-800 border px-4 py-2">Summary</td>
-            <td colspan="1" class="text-gray-800 border px-4 py-2">
+            <td
+              colspan="1"
+              id="total-price"
+              class="text-gray-800 border px-4 py-2"
+            >
               {{ TotalPrice }}฿
             </td>
           </tr>
@@ -65,6 +69,8 @@ export default class CheckOutPage extends Vue {
       const indexOfBookInGroupBook = groupBook.findIndex(
         e => e.book.id === this.cart[i].book.id
       );
+      // if there'is this book in groupCar, then add 1 to number of book
+      // else push new book in groupBook
       if (indexOfBookInGroupBook >= 0) {
         groupBook[indexOfBookInGroupBook].number += 1;
       } else {
@@ -75,6 +81,7 @@ export default class CheckOutPage extends Vue {
       }
     }
 
+    // return groupBook which sorted by book id (low to high)
     return groupBook.sort((a, b) => a.book.id - b.book.id);
   }
 
@@ -82,12 +89,14 @@ export default class CheckOutPage extends Vue {
     let groupBookTmp: GroupCartModel[] = [...this.GroupBookInCart];
     let calculatedPrice = 0;
 
+    // while groupBook can be picked up ( length of groupBook != 0)
     while (groupBookTmp.length !== 0) {
       const uniqueBook = groupBookTmp.length;
       const discountPercent = (uniqueBook - 1) * 10;
 
       // calculate price
       for (let i = 0; i < uniqueBook; i++) {
+        // net price of book = original price - discount
         calculatedPrice +=
           (groupBookTmp[i].book.price * (100 - discountPercent)) / 100;
         groupBookTmp[i].number -= 1;
@@ -102,7 +111,6 @@ export default class CheckOutPage extends Vue {
   clearCart() {
     // TODO: clear all item in cart
     this.cart = [];
-    console.log("clear");
   }
 }
 </script>
