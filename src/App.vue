@@ -32,11 +32,11 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import { BookModel, CartModel } from "@/model";
-import data from "./books/db";
+import data from "@/books_db";
 
 @Component
 export default class HelloWorld extends Vue {
-  books: BookModel[]  = data.books;
+  books: BookModel[] = data.books;
   cart: CartModel[] = [];
 
   get numberOfBookInCart() {
