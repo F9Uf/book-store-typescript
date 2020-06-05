@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full overflow-hidden bg-orange-200">
+  <div class="w-full overflow-hidden bg-red-100">
     <div class="px-6 py-4">
       <div class="font-bold text-xl mb-2">Promotion</div>
       <ul class="list-inside text-gray-700 text-base">
