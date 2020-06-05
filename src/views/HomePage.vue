@@ -1,5 +1,6 @@
 <template>
   <div class="home flex flex-wrap">
+    <promotion-card />
     <div
       id="book-item"
       class="w-full sm:w-1/2 md:w-1/2 lg:w-1/4 mb-10 px-3"
@@ -15,10 +16,12 @@
 import { Component, Prop, Vue } from "vue-property-decorator";
 import { BookModel, CartModel } from "@/model";
 import Item from "@/components/Item.vue";
+import PromotionCard from "@/components/PromotionCard.vue";
 
 @Component({
   components: {
-    Item
+    Item,
+    PromotionCard
   }
 })
 export default class HomePage extends Vue {

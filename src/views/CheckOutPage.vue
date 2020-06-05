@@ -1,6 +1,7 @@
 <template>
   <div class="about">
     <h1 class="text-3xl">Check out your orders</h1>
+    <promotion-card />
     <div class="w-full rounded overflow-hidden shadow-lg my-5">
       <table class="table-fixed w-full">
         <thead>
@@ -46,8 +47,13 @@
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
 import { BookModel, CartModel, GroupCartModel } from "@/model";
+import PromotionCard from "@/components/PromotionCard.vue";
 
-@Component
+@Component({
+  components: {
+    PromotionCard
+  }
+})
 export default class CheckOutPage extends Vue {
   @Prop() public books!: BookModel[];
   @Prop() public cart!: CartModel[];
