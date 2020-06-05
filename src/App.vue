@@ -13,6 +13,7 @@
             >Home</router-link
           >
           <router-link
+            id="link-checkout"
             exact-active-class="text-red-600"
             class="mx-6"
             to="/checkout"
