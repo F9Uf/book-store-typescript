@@ -56,7 +56,7 @@ import PromotionCard from "@/components/PromotionCard.vue";
 })
 export default class CheckOutPage extends Vue {
   @Prop() public books!: BookModel[];
-  @PropSync('cartProp') cart!: CartModel[];
+  @PropSync("cartProp") cart!: CartModel[];
 
   get GroupBookInCart() {
     const groupBook: GroupCartModel[] = [];
@@ -102,8 +102,7 @@ export default class CheckOutPage extends Vue {
   clearCart() {
     // TODO: clear all item in cart
     this.cart = [];
-    console.log('clear');
-    
+    console.log("clear");
   }
 }
 </script>

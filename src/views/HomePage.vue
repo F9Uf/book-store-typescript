@@ -26,7 +26,7 @@ import PromotionCard from "@/components/PromotionCard.vue";
 })
 export default class HomePage extends Vue {
   @Prop() public books!: BookModel[];
-  @PropSync('cartProp') public cart!: CartModel[];
+  @PropSync("cartProp") public cart!: CartModel[];
 
   addBookToCart(seletedBook: BookModel) {
     this.cart.push({
