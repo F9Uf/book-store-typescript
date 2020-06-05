@@ -45,7 +45,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Prop } from "vue-property-decorator";
+import { Component, Vue, Prop, PropSync } from "vue-property-decorator";
 import { BookModel, CartModel, GroupCartModel } from "@/model";
 import PromotionCard from "@/components/PromotionCard.vue";
 
@@ -56,7 +56,7 @@ import PromotionCard from "@/components/PromotionCard.vue";
 })
 export default class CheckOutPage extends Vue {
   @Prop() public books!: BookModel[];
-  @Prop() public cart!: CartModel[];
+  @PropSync('cartProp') cart!: CartModel[];
 
   get GroupBookInCart() {
     const groupBook: GroupCartModel[] = [];
@@ -101,6 +101,9 @@ export default class CheckOutPage extends Vue {
 
   clearCart() {
     // TODO: clear all item in cart
+    this.cart = [];
+    console.log('clear');
+    
   }
 }
 </script>

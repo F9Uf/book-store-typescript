@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue, PropSync } from "vue-property-decorator";
 import { BookModel, CartModel } from "@/model";
 import Item from "@/components/Item.vue";
 import PromotionCard from "@/components/PromotionCard.vue";
@@ -26,7 +26,7 @@ import PromotionCard from "@/components/PromotionCard.vue";
 })
 export default class HomePage extends Vue {
   @Prop() public books!: BookModel[];
-  @Prop() public cart!: CartModel[];
+  @PropSync('cartProp') public cart!: CartModel[];
 
   addBookToCart(seletedBook: BookModel) {
     this.cart.push({

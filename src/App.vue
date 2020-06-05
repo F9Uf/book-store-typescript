@@ -24,7 +24,7 @@
       </div>
     </div>
     <div id="content" class="pt-20 w-full px-6">
-      <router-view :books="books" :cart="cart" />
+      <router-view :books="books" :cartProp.sync="cart" />
     </div>
   </div>
 </template>
