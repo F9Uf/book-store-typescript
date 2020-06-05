@@ -79,8 +79,24 @@ export default class CheckOutPage extends Vue {
   }
 
   get TotalPrice() {
-    // TODO: calculate following promotion
-    return this.cart.map(e => e.book.price).reduce((acc, cur) => acc + cur, 0);
+    let groupBookTmp: GroupCartModel[] = [...this.GroupBookInCart];
+    let calculatedPrice = 0;
+
+    while (groupBookTmp.length !== 0) {
+      const uniqueBook = groupBookTmp.length;
+      const discountPercent = (uniqueBook - 1) * 10;
+
+      // calculate price
+      for (let i = 0; i < uniqueBook; i++) {
+        calculatedPrice +=
+          (groupBookTmp[i].book.price * (100 - discountPercent)) / 100;
+        groupBookTmp[i].number -= 1;
+      }
+
+      // filter only book which are not calculated
+      groupBookTmp = groupBookTmp.filter(e => e.number > 0);
+    }
+    return calculatedPrice;
   }
 
   clearCart() {
