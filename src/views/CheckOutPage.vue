@@ -45,8 +45,7 @@
 
 <script lang="ts">
 import { Component, Vue, Prop } from "vue-property-decorator";
-import { BookModel } from "../books/model";
-import { CartModel } from "../cart/model";
+import { BookModel, CartModel, GroupCartModel } from "@/model";
 
 @Component
 export default class CheckOutPage extends Vue {
@@ -54,7 +53,7 @@ export default class CheckOutPage extends Vue {
   @Prop() public cart!: CartModel[];
 
   get GroupBookInCart() {
-    const groupBook: any[] = [];
+    const groupBook: GroupCartModel[] = [];
 
     for (let i = 0; i < this.cart.length; i++) {
       const indexOfBookInGroupBook = groupBook.findIndex(
@@ -65,7 +64,7 @@ export default class CheckOutPage extends Vue {
       } else {
         groupBook.push({
           number: 1,
-          ...this.cart[i]
+          book: this.cart[i].book
         });
       }
     }

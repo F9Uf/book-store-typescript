@@ -13,8 +13,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { BookModel } from "@/books/model";
-import { CartModel } from "@/cart/model";
+import { BookModel, CartModel } from "@/model";
 import Item from "@/components/Item.vue";
 
 @Component({
@@ -28,7 +27,7 @@ export default class HomePage extends Vue {
 
   addBookToCart(seletedBook: BookModel) {
     this.cart.push({
-      cartId: this.cart.length,
+      itemNo: this.cart.length,
       book: seletedBook
     } as CartModel);
   }

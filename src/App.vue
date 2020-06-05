@@ -31,12 +31,13 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import { BookModel, CartModel } from "@/model";
 import data from "./books/db";
 
 @Component
 export default class HelloWorld extends Vue {
-  books = data.books;
-  cart = [];
+  books: BookModel[]  = data.books;
+  cart: CartModel[] = [];
 
   get numberOfBookInCart() {
     return this.cart.length;

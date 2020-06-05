@@ -25,7 +25,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator";
-import { BookModel } from "@/books/model";
+import { BookModel } from "@/model";
 
 @Component
 export default class Item extends Vue {
