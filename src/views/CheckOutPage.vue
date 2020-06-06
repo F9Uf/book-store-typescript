@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about mb-5">
     <h1 class="text-3xl">Check out your orders</h1>
     <promotion-card />
     <div class="w-full rounded overflow-hidden shadow-lg my-5">
